@@ -34,6 +34,7 @@ interface Venue {
 let error_msg = ref("");
 let has_error = ref(false);
 let is_loading = ref(true);
+let show_info_box = ref(false);
 
 let stored_data = ref<Artist[]>([])
 
@@ -121,8 +122,13 @@ onMounted(() => {
 
 		<div id="map" :style="{ height: props.leaflet_settings.height, width: props.leaflet_settings.width }"></div>
         
-        <div class="artist-info" v-if="stored_data.length">
-            <p v-if="countGigs() > 0">{{ stored_data[0].artist.name }} played: {{ countGigs() }} gigs</p>
+        <div class="artist-info-button" v-if="stored_data.length && !show_info_box" @click="show_info_box = true">
+            i
+        </div>
+
+        <div class="artist-info" v-if="stored_data.length && show_info_box" @click="show_info_box = false">
+            <p class="artist-name">{{ stored_data[0].artist.name }}</p>
+            <p v-if="countGigs() > 0">played: {{ countGigs() }} gigs</p>
             <p v-if="checkDifferentCountries() > 0">in {{ checkDifferentCountries() }} different countries.</p>
         </div>
 
@@ -132,10 +138,57 @@ onMounted(() => {
 
 
 <style scoped>
+
+    #gigmap-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    #map {
+        z-index: 50;
+    }
+    .artist-info-button {
+        transform: 300ms all;
+        opacity: 90%;
+        z-index: 100;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: white;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 50%;
+        margin: 1.5rem;
+        padding: .5rem 1rem;
+        color: #1c1c1c;
+        font-size: .8rem;
+    }
+
+    .artist-name {
+        font-weight: 600;
+    }
+
+    .artist-info{
+        transform: 300ms all;
+        opacity: 90%;
+        z-index: 100;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: white;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: .5rem;
+        margin: 1.5rem;
+        padding: .5rem;
+        color: #1c1c1c;
+        font-size: .8rem;
+    }
+
     .error_msg {
       color:#b83c3c;
     }
+
     .loading {
       color:#3cb844;
     }
+
 </style>
