@@ -1,10 +1,12 @@
 # bandsintown-gig-map
 
 ## First Setup
-Go to your BandsinTown artist profile (https://artists.bandsintown.com)   
-Settings -> Copy API Key
+* Go to your BandsinTown artist profile (https://artists.bandsintown.com) 
+* Copy your artist id (the number) from the url (artists.bandsintown.com/artists/**1553223458**/home)
+* Go to settings -> Copy API Key
 
-More info: https://help.artists.bandsintown.com/en/articles/9186477-api-documentation
+### BandsinTown Api documentation: 
+https://help.artists.bandsintown.com/en/articles/9186477-api-documentation
 
 ## How to import and use the component
 
