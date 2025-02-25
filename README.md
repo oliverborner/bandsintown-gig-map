@@ -1,6 +1,6 @@
 # bandsintown-gig-map
 
-![Screenshot of the embeded component](https://github.com/oliverborner/bandsintown-gig-map/tree/main/src/assets/screenshot.png)
+![Screenshot of the embeded component](https://github.com/oliverborner/bandsintown-gig-map/blob/main/src/assets/screenshot.png)
 
 ## First Setup
 * Go to your BandsinTown artist profile (https://artists.bandsintown.com) 
