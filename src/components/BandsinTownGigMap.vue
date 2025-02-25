@@ -35,6 +35,8 @@ let error_msg = ref("");
 let has_error = ref(false);
 let is_loading = ref(true);
 let show_info_box = ref(false);
+let countPastGigs = ref(0);
+let countUpcomingGigs = ref(0);
 
 let stored_data = ref<Artist[]>([])
 
@@ -63,12 +65,34 @@ async function getData() {
         }).addTo(map);
 
         data.forEach((marker: Artist) => {
-            L.marker([marker.venue.latitude, marker.venue.longitude])
-            .bindPopup('<b>' + marker.venue.name + '</b>' + '<br>' 
-            + new Date(marker.datetime).toLocaleDateString() + '<br>' 
-            + marker.venue.city + ', (' 
-            + marker.venue.country + ')')
-            .addTo(map);
+            // Set marker for past gigs
+            if (new Date(marker.datetime) < new Date()) {
+                L.marker([marker.venue.latitude, marker.venue.longitude])
+                .bindPopup('<b>' + marker.venue.name + '</b>' + '<br>' 
+                + new Date(marker.datetime).toLocaleDateString() + '<br>' 
+                + marker.venue.city + ', (' 
+                + marker.venue.country + ')')
+                .addTo(map);
+            }
+            // Set marker for upcoming gigs
+            const redIcon = new L.Icon({
+                iconUrl:
+                    "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
+                shadowUrl:
+                    "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png",
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [1, -34],
+                shadowSize: [41, 41]
+            });
+            if (new Date(marker.datetime) > new Date()) {
+                L.marker([marker.venue.latitude, marker.venue.longitude], {icon: redIcon})
+                .bindPopup('<b>' + marker.venue.name + '</b>' + '<br>' 
+                + new Date(marker.datetime).toLocaleDateString() + '<br>' 
+                + marker.venue.city + ', (' 
+                + marker.venue.country + ')')
+                .addTo(map);
+            }
         })
 
         is_loading.value = false;
@@ -85,7 +109,13 @@ async function getData() {
 }
 
 const countGigs = () => {
-    return stored_data.value.length;
+    stored_data.value.forEach((marker: Artist) => {
+        if (new Date(marker.datetime) < new Date()) {
+            countPastGigs.value++;  
+        } else {
+            countUpcomingGigs.value++;
+        }
+    });
 }
 
 const checkDifferentCountries = () => {
@@ -128,8 +158,9 @@ onMounted(() => {
 
         <div class="artist-info" v-if="stored_data.length && show_info_box" @click="show_info_box = false">
             <p class="artist-name">{{ stored_data[0].artist.name }}</p>
-            <p v-if="countGigs() > 0">played: {{ countGigs() }} gigs</p>
-            <p v-if="checkDifferentCountries() > 0">in {{ checkDifferentCountries() }} different countries.</p>
+            <p v-if="countPastGigs > 0">Past Gigs: {{ countPastGigs }}</p>
+            <p v-if="countUpcomingGigs > 0">Upcoming Gigs: {{ countUpcomingGigs }}</p>
+            <p v-if="checkDifferentCountries() > 0">In {{ checkDifferentCountries() }} different countries</p>
         </div>
 
     </div>

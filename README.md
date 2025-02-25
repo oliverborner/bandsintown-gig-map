@@ -1,5 +1,7 @@
 # bandsintown-gig-map
 
+![Screenshot of the embeded component](https://github.com/oliverborner/bandsintown-gig-map/tree/main/src/assets/screenshot.png)
+
 ## First Setup
 * Go to your BandsinTown artist profile (https://artists.bandsintown.com) 
 * Copy your artist id (the number) from the url: <em>artists.bandsintown.com/artists/**1553223458**/home</em>
@@ -58,3 +60,4 @@ npm run dev
 npm run build
 ```
 # bandsintown-gig-map
+* feel free to contribute or open pull requests. cheers
