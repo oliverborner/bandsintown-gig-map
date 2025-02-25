@@ -1,6 +1,42 @@
 # bandsintown-gig-map
 
-This template should help get you started developing with Vue 3 in Vite.
+## First Setup
+Go to your BandsinTown artist profile (artists.bandsintown.com)
+Settings -> Copy API Key
+
+More info: https://help.artists.bandsintown.com/en/articles/9186477-api-documentation
+
+## How to import and use the component
+
+1.) Import the copmponent
+```
+<script setup lang="ts">
+  import GigMap from './components/BandsinTownGigMap.vue'
+</script>
+```
+
+```
+2.) Use the component
+<GigMap 
+
+    :credentials="{
+      artist_id: YOUR BANDINTOWN ARTIST ID,
+      api_key: YOUR BANDSINTOWN API KEY
+    }" 
+
+    :leaflet_settings="{
+      height: '450px',
+      width: '100%',
+      start_latitude: 50.2334908498,
+      start_longitude: 12,
+      start_zoomlevel: 4.4
+    }"
+
+  />
+```
+
+## Dependencies
+* Leaflet
 
 ## Recommended IDE Setup
 
