@@ -2,7 +2,7 @@
 
 ## First Setup
 * Go to your BandsinTown artist profile (https://artists.bandsintown.com) 
-* Copy your artist id (the number) from the url ```artists.bandsintown.com/artists/**1553223458**/home```
+* Copy your artist id (the number) from the url artists.bandsintown.com/artists/**1553223458**/home
 * Go to settings -> copy your API key
 
 ### BandsinTown Api documentation: 
@@ -10,12 +10,12 @@ https://help.artists.bandsintown.com/en/articles/9186477-api-documentation
 
 ## How to import and use the component
 
-1.) Import the copmponent
+1. Import the component
 ```
   import GigMap from './components/BandsinTownGigMap.vue'
 ```
 
-2.) Use the component
+2. Use the component
 
 ```
 <GigMap 
