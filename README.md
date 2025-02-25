@@ -1,7 +1,7 @@
 # bandsintown-gig-map
 
 ## First Setup
-Go to your BandsinTown artist profile (artists.bandsintown.com)
+Go to your BandsinTown artist profile (https://artists.bandsintown.com)   
 Settings -> Copy API Key
 
 More info: https://help.artists.bandsintown.com/en/articles/9186477-api-documentation
@@ -15,8 +15,9 @@ More info: https://help.artists.bandsintown.com/en/articles/9186477-api-document
 </script>
 ```
 
-```
 2.) Use the component
+
+```
 <GigMap 
 
     :credentials="{
