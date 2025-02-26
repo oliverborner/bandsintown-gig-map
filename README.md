@@ -1,4 +1,5 @@
 # bandsintown-gig-map
+A vue3 component for integrating a map which is showing all your bandsintown gigs.
 
 ![Screenshot of the embeded component](https://github.com/oliverborner/bandsintown-gig-map/blob/main/src/assets/screenshot.png)
 
