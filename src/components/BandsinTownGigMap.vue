@@ -173,11 +173,34 @@ onMounted(() => {
     #gigmap-container {
         width: 100%;
         height: 100%;
+        position: relative;
+        transition:
+            color 0.5s,
+            background-color 0.5s;
+    
+        font-family:
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            'Fira Sans',
+            'Droid Sans',
+            'Helvetica Neue',
+            sans-serif;
+        font-size: 15px;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     #map {
         z-index: 50;
     }
+    
     .artist-info-button {
         transform: 300ms all;
         opacity: 90%;
@@ -188,10 +211,10 @@ onMounted(() => {
         background-color: white;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         border-radius: 50%;
-        margin: 1.5rem;
+        margin: 1rem;
         padding: .5rem 1rem;
         color: #1c1c1c;
-        font-size: .8rem;
+        font-size: 1rem;
     }
 
     .artist-name {
@@ -208,8 +231,8 @@ onMounted(() => {
         background-color: white;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         border-radius: .5rem;
-        margin: 1.5rem;
-        padding: .5rem;
+        margin: 1rem;
+        padding: .5rem 1rem;
         color: #1c1c1c;
         font-size: .8rem;
     }
