@@ -183,7 +183,7 @@ onMounted(() => {
 
 
 <style scoped>
-
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
      #gigmap-container {
         width: 100%;
         height: 100%;
