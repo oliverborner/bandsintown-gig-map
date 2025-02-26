@@ -11,6 +11,11 @@ A vue3 component for integrating a map which is showing all your bandsintown gig
 ### BandsinTown Api documentation: 
 https://help.artists.bandsintown.com/en/articles/9186477-api-documentation
 
+## Installation
+```
+ npm i bandsintown-gig-map
+```
+
 ## How to import and use the component
 
 1. Import the component and styles
@@ -26,7 +31,7 @@ https://help.artists.bandsintown.com/en/articles/9186477-api-documentation
 
     :credentials="{
       artist_id: YOUR BANDINTOWN ARTIST ID,
-      api_key: YOUR BANDSINTOWN API KEY
+      api_key: 'YOUR BANDSINTOWN API KEY'
     }" 
 
     :leaflet_settings="{
@@ -44,22 +49,5 @@ https://help.artists.bandsintown.com/en/articles/9186477-api-documentation
 * Leaflet
 
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
 # bandsintown-gig-map
 * feel free to contribute or open pull requests. cheers
