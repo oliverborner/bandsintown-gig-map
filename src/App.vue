@@ -23,8 +23,8 @@
   <GigMap 
 
     :credentials="{
-      artist_id: 15532658,
-      api_key: 'd50a015e4d6ccf1a0204a4cc9aa32d09'
+      artist_id: 232323,
+      api_key: 'API KEY'
     }" 
 
     :leaflet_settings="{
