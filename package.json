@@ -1,8 +1,33 @@
 {
   "name": "bandsintown-gig-map",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
+  "version": "0.0.1",
+  "private": false,
+  "author": {
+    "name": "Oliver Borner",
+    "email": "oliverborner@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "URL": "https://github.com/oliverborner/bandsintown-gig-map"
+  },
+  "main": "./dist/plugin.cjs.js",
+  "module": "./dist/plugin.es.js",
+  "files": [
+    "dist/",
+    "dist/BandsinTownMapPlugin.d.ts"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/plugin.es.js",
+      "require": "./dist/plugin.cjs.js",
+      "types": "./dist/BandsinTownMapPlugin.d.ts"
+    },
+    "./style.css": "./dist/bandsintown-gig-map.css"
+  },
+  "browser": {
+    ".": "./dist/plugin.es.js"
+  },
+  "types": "./dist/BandsinTownMapPlugin.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -11,8 +36,12 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
-    "leaflet": "^1.9.4",
-    "vue": "^3.5.13"
+    "rollup-plugin-typescript2": "^0.36.0",
+    "vue": "^3.5.13",
+    "leaflet": "^1.9.4"
+  },
+  "peerDependencies": {
+    "leaflet": "^1.9.4"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",

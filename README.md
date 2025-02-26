@@ -12,15 +12,16 @@ https://help.artists.bandsintown.com/en/articles/9186477-api-documentation
 
 ## How to import and use the component
 
-1. Import the component
+1. Import the component and styles
 ```
-  import GigMap from './components/BandsinTownGigMap.vue'
+    import BandsinTownGigMap from 'bandsintown-gig-map'
+    import 'bandsintown-gig-map/style.css'; 
 ```
 
 2. Use the component
 
 ```
-<GigMap 
+<BandsinTownGigMap 
 
     :credentials="{
       artist_id: YOUR BANDINTOWN ARTIST ID,

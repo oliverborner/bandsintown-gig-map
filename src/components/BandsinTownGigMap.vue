@@ -1,7 +1,20 @@
+<script lang="ts">
+
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+
+name: 'bandsintown-gig-map',
+
+})
+
+</script>
+
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import * as L from 'leaflet';  
 import 'leaflet/dist/leaflet.css';  
+
 
 interface Props {
     credentials: {artist_id: number, api_key: string},
@@ -136,6 +149,7 @@ onMounted(() => {
 
 });
 
+
 </script>
 
 
@@ -170,14 +184,13 @@ onMounted(() => {
 
 <style scoped>
 
-    #gigmap-container {
+     #gigmap-container {
         width: 100%;
         height: 100%;
         position: relative;
         transition:
             color 0.5s,
             background-color 0.5s;
-    
         font-family:
             Inter,
             -apple-system,
@@ -200,7 +213,7 @@ onMounted(() => {
     #map {
         z-index: 50;
     }
-    
+
     .artist-info-button {
         transform: 300ms all;
         opacity: 90%;
