@@ -13,15 +13,15 @@ https://help.artists.bandsintown.com/en/articles/9186477-api-documentation
 
 ## Installation
 ```
- npm i bandsintown-gig-map
+npm i bandsintown-gig-map
 ```
 
 ## How to import and use the component
 
 1. Import the component and styles
 ```
-    import BandsinTownGigMap from 'bandsintown-gig-map'
-    import 'bandsintown-gig-map/style.css'; 
+import BandsinTownGigMap from 'bandsintown-gig-map'
+import 'bandsintown-gig-map/style.css'; 
 ```
 
 2. Use the component

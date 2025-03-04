@@ -1,6 +1,6 @@
 {
   "name": "bandsintown-gig-map",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "author": {
     "name": "Oliver Borner",
@@ -10,6 +10,21 @@
     "type": "git",
     "URL": "https://github.com/oliverborner/bandsintown-gig-map"
   },
+  "keywords": [
+    "front-end",
+    "web",
+    "vue",
+    "vuejs",
+    "vue-js",
+    "bandsintown",
+    "vue3",
+    "map",
+    "leaflet",
+    "bandsintown-gig-map",
+    "gig-map",
+    "live-gigs"
+  ],
+  "license": "MIT",
   "main": "./dist/plugin.cjs.js",
   "module": "./dist/plugin.es.js",
   "files": [
