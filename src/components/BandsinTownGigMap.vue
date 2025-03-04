@@ -54,8 +54,6 @@ let countUpcomingGigs = ref(0);
 let stored_data = ref<Artist[]>([])
 
 
-// TODO: Difference / Upcoming und Past gigs / URL /past/ &date=past??
-
 async function getData() {
 
     const url = 'https://rest.bandsintown.com/artists/id_' + props.credentials.artist_id + '/events/?app_id=' + props.credentials.api_key + '&date=all';
@@ -68,8 +66,7 @@ async function getData() {
             
         }
         const data = await response.json();
-        
-        // Set marker for upcoming gigs
+
         const redIcon = new L.Icon({
             iconUrl:
                 "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
@@ -107,8 +104,8 @@ async function getData() {
                 + marker.venue.city + ', (' 
                 + marker.venue.country + ')')
                 .addTo(map);
-            }
-        
+            }     
+            // Set marker for upcoming gigs
             if (new Date(marker.datetime) > new Date()) {
                 L.marker([marker.venue.latitude, marker.venue.longitude], {icon: redIcon})
                 .bindPopup('<b>' + marker.venue.name + '</b>' + '<br>' 
@@ -194,7 +191,7 @@ onMounted(() => {
 
 
 <style scoped>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
      #gigmap-container {
         width: 100%;
         height: 100%;
