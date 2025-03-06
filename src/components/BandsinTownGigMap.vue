@@ -23,7 +23,8 @@ interface Props {
         width: string,
         start_latitude: number,
         start_longitude: number,
-        start_zoomlevel: number
+        start_zoomlevel: number,
+        scrollWheelZoom: boolean
     }
 }
 
@@ -88,7 +89,7 @@ async function getData() {
             shadowSize: [41, 41]
         });
         
-        let map = L.map('map').setView([props.leaflet_settings.start_latitude, props.leaflet_settings.start_longitude], props.leaflet_settings.start_zoomlevel); // Config
+        let map = L.map('map', { scrollWheelZoom: props.leaflet_settings.scrollWheelZoom }).setView([props.leaflet_settings.start_latitude, props.leaflet_settings.start_longitude], props.leaflet_settings.start_zoomlevel); 
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,

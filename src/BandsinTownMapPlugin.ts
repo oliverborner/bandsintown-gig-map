@@ -7,6 +7,11 @@ const BandsinTownGigMapPlugin = {
   },
 };
 
+// Globale Variable für die Nutzung in HTML-Dateien
+if (typeof window !== 'undefined') {
+  (window as any).BandsinTownGigMapPlugin = BandsinTownGigMapPlugin;
+}
+
 // Default export for direct importing
 export default GigMap;
 

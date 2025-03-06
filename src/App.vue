@@ -23,8 +23,8 @@
   <GigMap 
 
     :credentials="{
-      artist_id: 232323,
-      api_key: 'API KEY'
+      artist_id: 1234,
+      api_key: 'API KEAY'
     }" 
 
     :leaflet_settings="{
@@ -32,7 +32,8 @@
       width: '100%',
       start_latitude: 50.2334908498,
       start_longitude: 12,
-      start_zoomlevel: 4.4
+      start_zoomlevel: 4.4,
+      scrollWheelZoom: false
     }"
 
   />

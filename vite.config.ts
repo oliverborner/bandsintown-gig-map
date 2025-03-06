@@ -33,9 +33,9 @@ export default defineConfig({
     cssCodeSplit: false,
     lib: {
       entry: './src/BandsinTownMapPlugin.ts',
-      formats: ['es', 'cjs'],
       name: 'BandsinTownGigMap',
-      fileName: (format) => `plugin.${format}.js`
+      fileName: (format) => `plugin.${format}.js`,
+      formats: ['es', 'cjs', 'umd']
     },
     rollupOptions: {
       external: ['vue'], // Externalize both Vue and Leaflet
