@@ -51,9 +51,9 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
+    "leaflet": "^1.9.4",
     "rollup-plugin-typescript2": "^0.36.0",
-    "vue": "^3.5.13",
-    "leaflet": "^1.9.4"
+    "vue": "^3.5.13"
   },
   "peerDependencies": {
     "leaflet": "^1.9.4"
